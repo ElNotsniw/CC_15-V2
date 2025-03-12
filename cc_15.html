@@ -3,9 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Coding Challenge #15</title>
 </head>
 <body>
-    
+    <!-- Task 1 - Base Structure Setup (Creating the Risk Dashboard) -->
+
+    <div id="riskdashboard">
+        <h1>Risk Management Dashboard</h1>
+
+        <form id="addriskform">
+            <label for="riskitem">NewRiskItem</label>
+            <input type="text" id="riskitem" name="riskitem" required placeholder="Enter risk item">
+            <button type="submit">Submit New Risk Assessment</button>
+        </form>
+
+        <div id="riskitemslist"></div>
+    </div>
+
+
+    <script src="cc_15.js"></script>
 </body>
 </html>
