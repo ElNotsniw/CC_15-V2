@@ -35,8 +35,18 @@ function addriskitem(riskitem, risklevel, department) {
     <p><strong>Risk Item:</strong> ${riskitem}</p>
     <p><strong>Risk Level:</strong> ${risklevel}</p>
     <p><strong>Department:</strong> ${department}</p>
+    <button class='resolve-btn'>Resolve</button>
     `;
     riskcard.innerHTML = riskdetail
+    
+    // (Task 3) - Removing Risk Items
+
+    // Creating a Resolve button to remove the risk from the dashboard
+
+    const resolvebutton = riskcard.querySelector('.resolve-btn');
+    resolvebutton.addEventListener('click', function() {
+        riskcard.remove();
+    });
 
     riskdashboard.appendChild(riskcard);
 }
