@@ -38,7 +38,7 @@ function addriskitem(riskitem, risklevel, department) {
     <button class='resolve-btn'>Resolve</button>
     `;
     riskcard.innerHTML = riskdetail
-    
+
     // (Task 3) - Removing Risk Items
 
     // Creating a Resolve button to remove the risk from the dashboard
@@ -49,7 +49,26 @@ function addriskitem(riskitem, risklevel, department) {
     });
 
     riskdashboard.appendChild(riskcard);
+
+    // Task 4 - Risk Categorization
+
+    // Set certain colors to certain risk level
+
+    switch(risklevel) {
+        case 'Low':
+            riskcard.style.backgroundColor = 'green';
+            break;
+        case 'Medium':
+            riskcard.style.backgroundColor = 'yellow'
+            break;
+        case 'High':
+            riskcard.style.backgroundColor = 'red';
+            break;
+        default:
+            riskcard.style.backgroundColor = 'gray'
+    }
 }
 
 addriskitem("Data Breach", "High", "IT");
 addriskitem("Supply Chain Disruption", "Medium", "Operations");
+addriskitem("HR Compliance Issue", "Low", "Human Resources");
