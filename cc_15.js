@@ -49,6 +49,9 @@ function addriskitem(riskitem, risklevel, department) {
 
     const resolvebutton = riskcard.querySelector('.resolve-btn');
     resolvebutton.addEventListener('click', function(event) {
+        // (Task 6) - Event Propagation Fix
+        // Using the event.stopPropagation to prevent unnecessary bubbling and unwanted actions
+        event.stopPropagation();
         riskcard.remove();
     });
 
