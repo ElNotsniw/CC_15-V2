@@ -10,12 +10,36 @@ const form = document.getElementById('addriskform');
 form.addEventListener('submit', function(event) {
     event.preventDefault();
 
-    const riskinput = document.getElementById('riskitem').value;
+    const riskitem = document.getElementById('riskitem').value;
+    const risklevel = document.getElementById('risklevel').value;
+    const department = document.getElementById('department').value;
 
-    const riskitemslist = document.getElementById('riskitemslist');
-    const newriskitem = document.createElement('div');
-    newriskitem.textContent = riskinput;
-    riskitemslist.appendChild(newriskitem);
+addriskitem(riskitem, risklevel, department);
 
-    document.getElementById('riskitem').value = '';
-    });
+document.getElementById('riskitem').value = '';
+document.getElementById('risklevel').value = 'Low';
+document.getElementById('department').value = '';
+});
+
+
+
+// Task 2 - Adding Risk Items
+
+// Creating a function to add a risk with a name, level, and department to the dashboard
+
+function addriskitem(riskitem, risklevel, department) {
+    const riskcard = document.createElement('div');
+    riskcard.classList.add('riskcard');
+
+    const riskdetail = `
+    <p><strong>Risk Item:</strong> ${riskitem}</p>
+    <p><strong>Risk Level:</strong> ${risklevel}</p>
+    <p><strong>Department:</strong> ${department}</p>
+    `;
+    riskcard.innerHTML = riskdetail
+
+    riskdashboard.appendChild(riskcard);
+}
+
+addriskitem("Data Breach", "High", "IT");
+addriskitem("Supply Chain Disruption", "Medium", "Operations");
